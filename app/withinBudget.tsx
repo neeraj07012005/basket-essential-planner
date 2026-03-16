@@ -1,7 +1,7 @@
-import React,{useState} from "react";
-import {View,Text,TextInput,TouchableOpacity,FlatList,StyleSheet} from "react-native";
-import {Picker} from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Picker } from "@react-native-picker/picker";
+import React, { useState } from "react";
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 /* GST RULES */
 
@@ -307,11 +307,11 @@ setSuggestions([]);
 <Text>Unit: {unit}</Text>
 <Text>GST: {gst}%</Text>
 
-<TouchableOpacity style={styles.button} onPress={addItem}>
+<TouchableOpacity style={styles.addButton} onPress={addItem}>
 <Text style={styles.buttonText}>Add Item</Text>
 </TouchableOpacity>
 
-<TouchableOpacity style={styles.button} onPress={saveNote}>
+<TouchableOpacity style={styles.saveButton} onPress={saveNote}>
 <Text style={styles.buttonText}>Save List</Text>
 </TouchableOpacity>
 
@@ -331,8 +331,25 @@ container:{flex:1,padding:20,backgroundColor:"#f4f6f8"},
 title:{fontSize:22,fontWeight:"bold",textAlign:"center"},
 input:{backgroundColor:"#fff",padding:10,borderRadius:10,marginBottom:10},
 row:{flexDirection:"row",gap:5},
-button:{backgroundColor:"#4CAF50",padding:12,borderRadius:10,alignItems:"center"},
-buttonText:{color:"#fff"},
+addButton:{
+backgroundColor:"#43A047",
+padding:14,
+borderRadius:10,
+alignItems:"center",
+marginBottom:12
+},
+
+saveButton:{
+backgroundColor:"#2E7D32",
+padding:14,
+borderRadius:10,
+alignItems:"center"
+},
+
+buttonText:{
+color:"#fff",
+fontWeight:"600"
+},
 progressBackground:{height:10,backgroundColor:"#ddd",borderRadius:10,marginVertical:10},
 progressFill:{height:10,backgroundColor:"#4CAF50",borderRadius:10}
 });
